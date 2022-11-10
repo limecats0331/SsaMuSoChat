@@ -1,0 +1,7 @@
+rabbitmq:
+  username: guest
+  password: guest
+  exchangeName: exchange
+  queueName: queue
+
+origins: http://localhost:3000
