@@ -29,10 +29,10 @@ public class MessageController {
     @MessageMapping("room.{roomKey}")
     public void messsage(Message<?> message, @DestinationVariable String roomKey, @Payload IdentificationDto identificationDto) {
         log.info("{}", identificationDto);
-//        StompHeaderAccessor accessor = StompHeaderAccessor.wrap(message);
-//        if (accessor.getCommand() == StompCommand.SUBSCRIBE && !apiHandler.identify(identificationDto)) {
-//            return;
-//        }
+        StompHeaderAccessor accessor = StompHeaderAccessor.wrap(message);
+        if (accessor.getCommand() == StompCommand.SUBSCRIBE && !apiHandler.identify(identificationDto)) {
+            return;
+        }
         rabbitTemplate.convertAndSend(exchangeName, "room." + roomKey, identificationDto);
     }
 
