@@ -16,10 +16,10 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitConfig {
 
     @Value("${rabbitmq.queueName}")
-    private String queueName = "queue";
+    private String queueName;
 
     @Value("${rabbitmq.exchangeName}")
-    private String exchangeName = "exchange";
+    private String exchangeName;
 
     private static final String routingKey = "room.*";
 
