@@ -9,5 +9,11 @@ import lombok.*;
 @ToString
 public class IdentificationDto {
 
-    private String from;
+    private String username;
+
+    private String routingKey;
+
+    public IdentificationDto(String username) {
+        this.username = username;
+    }
 }

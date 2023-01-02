@@ -5,3 +5,4 @@ rabbitmq:
   queueName: chatting.queue
 
 origins: http://localhost:8080
+ssamusoUrl: http://localhost:8080

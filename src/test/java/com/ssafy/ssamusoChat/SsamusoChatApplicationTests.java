@@ -72,7 +72,7 @@ class SsamusoChatApplicationTests {
 		stompSession.send("/chatting/room.1", new IdentificationDto("username"));
 		IdentificationDto dto = queue.poll(5, TimeUnit.SECONDS);
 
-		assertThat(dto.getFrom()).isEqualTo("username");
+		assertThat(dto.getUsername()).isEqualTo("username");
 	}
 
 	private class StompFrameHandlerImpl implements StompFrameHandler {
